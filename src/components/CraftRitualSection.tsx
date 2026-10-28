@@ -252,22 +252,22 @@ export const CraftRitualSection: React.FC<CraftRitualSectionProps> = ({ onOpenOr
               </div>
 
               <div className="absolute top-[8%] right-[22%] hidden rounded-full border border-[#C99732]/45 bg-[#0A241E]/90 px-3 py-1 text-[.62rem] font-medium tracking-wider text-[#F7F1E5] uppercase backdrop-blur-md shadow-lg lg:block">
-                Golden Handcrafted Laddu
+                Golden Royal Laddu & Melon Seeds
               </div>
 
               <div className="absolute bottom-[20%] right-[10%] hidden rounded-full border border-[#C99732]/45 bg-[#0A241E]/90 px-3 py-1 text-[.62rem] font-medium tracking-wider text-[#F7F1E5] uppercase backdrop-blur-md shadow-lg lg:block">
-                Boost & Horlicks Burfi
+                Pista, Rose & Boost Burfi
               </div>
 
               <div className="absolute bottom-[16%] left-[16%] hidden rounded-full border border-[#C99732]/45 bg-[#0A241E]/90 px-3 py-1 text-[.62rem] font-medium tracking-wider text-[#F7F1E5] uppercase backdrop-blur-md shadow-lg lg:block">
-                Crisp Saffron Jalebi
+                Crisp Saffron Jalebi & Dry Fruits
               </div>
             </div>
 
             {/* Bottom Platter Label & Explore Trigger */}
             <div className="mt-4 flex flex-wrap items-center justify-center gap-3 text-center max-[860px]:mt-2">
               <span className="text-[.7rem] font-normal tracking-[.24em] text-[#C99732]/90 uppercase">
-                Royal Sweet Platter · All 7 Handcrafted Varieties
+                Royal Sweet Platter · Artisanal 12 Handcrafted Varieties
               </span>
 
               <a

@@ -23,3 +23,4 @@ with sync_playwright() as p:
         print("Modal title:", modal.locator("#sweet-modal-title").inner_text())
 
     b.close()
+

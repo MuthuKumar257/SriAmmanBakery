@@ -9,7 +9,7 @@ interface PackSectionProps {
   onOpenOrder: (productName?: string) => void;
 }
 
-const GARNISH_IMAGES = [1, 2, 3, 4, 5, 6, 7].map((i) => `/garnishes/${i}.png`);
+const GARNISH_IMAGES = Array.from({ length: 12 }, (_, i) => `/garnishes/${i + 1}.png`);
 const ASPECT = 1.0;
 const randRange = (spread: number) => (Math.random() - 0.5) * 2 * spread;
 
