@@ -118,6 +118,46 @@ body {
               radial-gradient(125% 100% at 50% 30%, #164a3d 0%, var(--color-forest-dark) 60%, #071b16 100%);
 }
 
+.hero-title-gold {
+  background: linear-gradient(180deg, #FFFDF8 0%, #FBE39A 22%, #E5B242 55%, #C99732 80%, #9E6B15 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  display: inline-block;
+  padding: 0.04em 0.05em 0.14em;
+  filter: drop-shadow(0 4px 18px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 24px rgba(201, 151, 50, 0.25));
+}
+
+.hero-title-container {
+  position: absolute;
+  inset-inline: 0;
+  top: 44%;
+  z-index: 1;
+  transform: translateY(-50%);
+  opacity: var(--hero-fade, 1);
+}
+
+.hero-cup-container {
+  pointer-events: none;
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  z-index: 2;
+  aspect-ratio: 1 / 1;
+  width: var(--cup);
+  transform: translate(-50%, -50%);
+}
+
+@media (width <= 860px) {
+  .hero-title-container {
+    top: 20%;
+  }
+  .hero-cup-container {
+    top: 54%;
+  }
+}
+
 .intro-grade {
   background: radial-gradient(circle at center, rgba(10, 36, 30, 0.35) 0%, rgba(7, 27, 22, 0.95) 100%),
               linear-gradient(180deg, rgba(18, 61, 50, 0.75) 0%, rgba(10, 36, 30, 0.98) 100%);

@@ -281,9 +281,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   slotRef,
   active,
 }) => {
-  const gradientTextClass =
-    "bg-linear-to-b from-[#FFFFFF] from-15% via-[#F7F1E5] via-55% to-[#C99732] to-95% bg-clip-text px-[.04em] pt-[.08em] pb-[.14em] text-transparent";
-
   return (
     <section
       id="top"
@@ -294,13 +291,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       <DripEdge />
 
       {/* Main Brand Title ("Sri Amman" & "Bakery") with Perfectly Symmetric Zero-Overlap Alignment */}
-      <h1 className="absolute inset-x-0 top-[44%] z-[1] -translate-y-1/2 [opacity:var(--hero-fade,1)] max-[860px]:top-[18%]">
+      <h1 className="hero-title-container">
         {/* Desktop View (> 860px): 3-Column Symmetric Layout with Guaranteed Centerpiece Clearance */}
-        <div className="hidden min-[861px]:grid min-[861px]:grid-cols-[1fr_auto_1fr] min-[861px]:items-center w-full px-(--pad)">
+        <div className="hidden min-[861px]:grid min-[861px]:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] min-[861px]:items-center w-full px-(--pad)">
           {/* Left Column: "Sri Amman" right-aligned with guaranteed clearance */}
-          <div className="flex justify-end pr-[clamp(14px,2vw,32px)]">
+          <div className="flex justify-end pr-[clamp(16px,4vw,34px)]">
             <span
-              className={`${gradientTextClass} animate-rise font-serif text-[clamp(3.2rem,6.8vw,8.4rem)] leading-none font-medium tracking-[-.02em] whitespace-nowrap`}
+              className="hero-title-gold animate-rise font-serif text-[clamp(3.2rem,6.4vw,8.8rem)] leading-none font-medium tracking-[-.02em] whitespace-nowrap"
             >
               {siteConfig.hero.titleWord1}
             </span>
@@ -313,9 +310,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           />
 
           {/* Right Column: "Bakery" left-aligned with identical clearance */}
-          <div className="flex justify-start pl-[clamp(14px,2vw,32px)]">
+          <div className="flex justify-start pl-[clamp(16px,4vw,34px)]">
             <span
-              className={`${gradientTextClass} animate-rise-late font-serif text-[clamp(3.2rem,6.8vw,8.4rem)] leading-none font-normal italic tracking-[-.02em] whitespace-nowrap`}
+              className="hero-title-gold animate-rise-late font-serif text-[clamp(3.2rem,6.4vw,8.8rem)] leading-none font-normal italic tracking-[-.02em] whitespace-nowrap"
             >
               {siteConfig.hero.titleWord2}
             </span>
@@ -323,11 +320,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         </div>
 
         {/* Mobile View (<= 860px): Centered single title cleanly above the platter */}
-        <div className="flex min-[861px]:hidden justify-center items-center gap-[.28em] px-4 font-serif text-[clamp(2.4rem,9.5vw,4.5rem)] leading-none font-medium tracking-[-.02em] whitespace-nowrap">
-          <span className={`${gradientTextClass} animate-rise`}>
+        <div className="flex min-[861px]:hidden justify-center items-center gap-[.25em] px-4 font-serif text-[clamp(2.5rem,10.5vw,4.8rem)] leading-none font-medium tracking-[-.02em] whitespace-nowrap">
+          <span className="hero-title-gold animate-rise">
             {siteConfig.hero.titleWord1}
           </span>
-          <span className={`${gradientTextClass} animate-rise-late font-normal italic`}>
+          <span className="hero-title-gold animate-rise-late font-normal italic">
             {siteConfig.hero.titleWord2}
           </span>
         </div>
@@ -340,13 +337,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       <div
         ref={slotRef}
         aria-hidden="true"
-        className="pointer-events-none absolute top-[44%] left-1/2 z-[2] aspect-square w-(--cup) -translate-x-1/2 -translate-y-1/2 max-[860px]:top-[50%]"
+        className="hero-cup-container"
       >
         <Image
           src="/sweet.png"
           alt={`${siteConfig.brandName} Handcrafted Sweets`}
-          width={1254}
-          height={1254}
+          width={1554}
+          height={1554}
           priority
           className="relative block h-full w-full animate-cup-in object-contain filter drop-shadow-[0_25px_40px_rgba(7,27,22,0.85)]"
         />

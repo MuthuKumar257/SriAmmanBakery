@@ -180,7 +180,7 @@ export const CraftRitualSection: React.FC<CraftRitualSectionProps> = ({ onOpenOr
 
               {/* Rolling Mysore Pak / Sweet Garnish Gliding Along the Track */}
               <Image
-                src="/garnishes/2.png"
+                src="/garnishes/3.png"
                 alt=""
                 width={56}
                 height={56}
