@@ -1,7 +1,7 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"main": ".open-next/worker.js",
-	"name": "sri-amman-bakery",
+	"name": "sriammanbakery",
 	"compatibility_date": "2026-10-28",
 	"compatibility_flags": [
 		"nodejs_compat",
