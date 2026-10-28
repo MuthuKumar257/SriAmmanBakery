@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import { ArrowRight, Plus, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
@@ -14,88 +14,324 @@ if (typeof window !== "undefined") {
 export interface SignatureSweet {
   id: string;
   name: string;
+  subtitle?: string;
   edition: string;
+  category: string;
   headline: string;
   description: string;
   tags: string[];
   metrics: { label: string; value: string }[];
   color: string;
   ink: string;
+  accent: string;
   image: string;
 }
 
 export const signatureSweets: SignatureSweet[] = [
   {
-    id: "baklava",
-    name: "Pistachio Baklava",
-    edition: "Grand Reserve · 48 Layers",
-    headline: "Hand-stretched filo ribbons infused with Iranian saffron syrup.",
+    id: "laddu",
+    name: "Laddu",
+    edition: "Traditional Classic · Gram Flour Sweet",
+    category: "Gram Flour Sweet",
+    headline:
+      "Golden, round traditional Indian sweet crafted with slow-roasted gram flour, 100% pure homemade ghee, green cardamom, melon seeds, and slivered pistachios.",
     description:
-      "Slow-baked with crushed Antep wild pistachios and finished with a crystalline amber honey glaze.",
-    tags: ["Wild Pistachio", "Organic Saffron", "Wildflower Honey"],
-    metrics: [
-      { label: "Flaky Layers", value: "48" },
-      { label: "Sweetness Index", value: "3 / 5" },
+      "Melt-in-the-mouth texture with an aromatic cardamom warmth, subtle nuttiness from slow-roasted gram flour, and a gentle crunch from toasted melon seeds.",
+    tags: [
+      "Gram Flour",
+      "100% Pure Homemade Ghee",
+      "Sugar",
+      "Melon Seeds",
+      "Pistachios",
+      "Green Cardamom",
     ],
-    color: "#E6EBD9",
-    ink: "#1A3323",
-    image: "/assets/sweets/baklava.png",
+    metrics: [
+      { label: "Ghee Purity", value: "100%" },
+      { label: "Shelf Life", value: "15 Days" },
+    ],
+    color: "#FBF5E8",
+    ink: "#123D32",
+    accent: "#C99732",
+    image: "/sweets/laddu.jpg",
   },
   {
-    id: "truffle",
-    name: "Midnight Truffle",
-    edition: "Single Origin · 74% Cacao",
+    id: "mysore-pak",
+    name: "Mysore Pak",
+    edition: "Heritage Specialty · 100% Pure Homemade Ghee",
+    category: "Heritage Specialty",
     headline:
-      "Silky ganache enrobed in obsidian cocoa and 24K edible gold leaf.",
+      "Rich, golden, traditional gram-flour sweet with a porous, honeycomb crumb that melts luxuriously on the tongue.",
     description:
-      "Crafted from Venezuelan single-estate beans paired with bourbon vanilla and smoked sea salt crystals.",
-    tags: ["74% Single-Estate", "Bourbon Vanilla", "Smoked Salt"],
+      "Silky, delicate honeycomb crumb with an unmistakable caramelized ghee aroma and an instant dissolve on the palate.",
+    tags: [
+      "Gram Flour",
+      "100% Pure Homemade Ghee",
+      "Sugar",
+      "Green Cardamom",
+    ],
     metrics: [
-      { label: "Cacao Purity", value: "74%" },
-      { label: "Sweetness Index", value: "2 / 5" },
+      { label: "Ghee Infusion", value: "Generous" },
+      { label: "Crumb Structure", value: "Honeycomb" },
+    ],
+    color: "#FDF4DC",
+    ink: "#651B24",
+    accent: "#C99732",
+    image: "/sweets/mysore-pak.jpg",
+  },
+  {
+    id: "jalebi",
+    name: "Jalebi",
+    edition: "Festive Spiral Sweet · Crisp & Syrup-Soaked",
+    category: "Festive Spiral Sweet",
+    headline:
+      "Bright orange, syrup-soaked spiral sweet fried crisp to golden perfection and steeped in warm saffron sugar syrup.",
+    description:
+      "Crisp and crunchy outer shell that bursts with warm, fragrant saffron syrup at the very first bite.",
+    tags: [
+      "Wheat Flour",
+      "100% Pure Homemade Ghee",
+      "Saffron Sugar Syrup",
+      "Green Cardamom",
+    ],
+    metrics: [
+      { label: "Crispness", value: "High" },
+      { label: "Syrup Base", value: "Saffron" },
+    ],
+    color: "#FFF2E5",
+    ink: "#0A241E",
+    accent: "#D9681E",
+    image: "/sweets/jalebi.jpg",
+  },
+  {
+    id: "badam-burfi",
+    name: "Badam Burfi",
+    edition: "Diamond Nut Burfi · Royal Almond Delicacy",
+    category: "Diamond Nut Burfi",
+    headline:
+      "Almond-based sweet cut into neat diamond pieces, infused with fragrant cardamom and crowned with pure edible silver foil and slivered almonds.",
+    description:
+      "Finely ground California almonds cooked with pure homemade ghee and milk, offering an ultra-smooth, delicate nutty texture.",
+    tags: [
+      "Almonds",
+      "Sugar",
+      "100% Pure Homemade Ghee",
+      "Cardamom",
+      "Edible Silver Foil",
+    ],
+    metrics: [
+      { label: "Nut Content", value: "Pure Almond" },
+      { label: "Cut Style", value: "Diamond" },
+    ],
+    color: "#FAF7F0",
+    ink: "#651B24",
+    accent: "#C99732",
+    image: "/sweets/badam-burfi.jpg",
+  },
+  {
+    id: "boost-burfi",
+    name: "Boost Burfi",
+    edition: "Malted Fudge Specialty · Signature Malt Fudge",
+    category: "Malted Fudge Specialty",
+    headline:
+      "Chocolate-brown malt burfi with an appetizing, rich fudge texture, deep malt aroma, and crunchy embedded cashews.",
+    description:
+      "Nostalgic malted chocolate-flavored milk fudge slow-cooked in pure homemade ghee with whole toasted cashew bits.",
+    tags: [
+      "Boost Malt",
+      "Milk Solids",
+      "100% Pure Homemade Ghee",
+      "Cashews",
+      "Sugar",
+    ],
+    metrics: [
+      { label: "Malt Profile", value: "Chocolate" },
+      { label: "Texture", value: "Rich Fudge" },
     ],
     color: "#1E1614",
-    ink: "#F3E5AB",
-    image: "/assets/sweets/truffle.png",
+    ink: "#F7E6CA",
+    accent: "#E0B04E",
+    image: "/sweets/boost-burfi.jpg",
   },
   {
-    id: "rose-delight",
-    name: "Rose & Cardamom",
-    edition: "Botanical Atelier · Velvet Cube",
+    id: "horlicks-burfi",
+    name: "Horlicks Burfi",
+    edition: "Golden Malted Specialty · Creamy Malted Square",
+    category: "Golden Malted Specialty",
     headline:
-      "Subtle Damascus rose water laced with stone-ground green cardamom.",
+      "Malt-flavored burfi presented in clean, attractive square pieces with a delicate milky aroma and toasted slivered nuts.",
     description:
-      "Dusted with toasted Turkish hazelnuts and natural ruby beetroot powder for a silky melt-in-mouth finish.",
-    tags: ["Damascus Rose", "Mysore Cardamom", "Toasted Hazelnut"],
-    metrics: [
-      { label: "Melt Profile", value: "Slow" },
-      { label: "Sweetness Index", value: "3.5 / 5" },
+      "Creamy, golden malt-infused milk confection slow-stirred with 100% pure homemade ghee and adorned with crunchy cashews.",
+    tags: [
+      "Horlicks Malt",
+      "Milk Solids",
+      "100% Pure Homemade Ghee",
+      "Cashews",
+      "Sugar",
     ],
-    color: "#F5E6E8",
-    ink: "#3E1821",
-    image: "/assets/sweets/rose-delight.png",
+    metrics: [
+      { label: "Malt Profile", value: "Golden" },
+      { label: "Melt Profile", value: "Creamy" },
+    ],
+    color: "#F6EEDC",
+    ink: "#2D1D14",
+    accent: "#C99732",
+    image: "/sweets/horlicks-burfi.jpg",
   },
   {
-    id: "honey-peda",
-    name: "Honey Caramel Peda",
-    edition: "Heritage Gold · Milk Reduction",
+    id: "badusha",
+    name: "Badusha",
+    edition: "Layered Festive Pastry · Traditional Layered Pastry",
+    category: "Layered Festive Pastry",
     headline:
-      "Slow-caramelized farm milk fudge infused with raw wildflower forest honey.",
+      "A traditional Indian sweet with a golden exterior, delicate layers, and a rich, sweet finish.",
     description:
-      "Simmered in shallow pans until deeply golden, kissed with nutmeg and stamped with an heirloom crest.",
-    tags: ["Caramelized Khoya", "Wild Honey", "Mace & Nutmeg"],
-    metrics: [
-      { label: "Reduction Time", value: "6 Hours" },
-      { label: "Sweetness Index", value: "3 / 5" },
+      "Flaky, layered glazed pastry with a tender crumb fried gently in pure homemade ghee to golden perfection.",
+    tags: [
+      "Refined Wheat Flour",
+      "100% Pure Homemade Ghee",
+      "Sugar",
+      "Cardamom",
     ],
-    color: "#F4E8D1",
-    ink: "#2A1810",
-    image: "/assets/sweets/honey-peda.png",
+    metrics: [
+      { label: "Crumb", value: "Tender Layered" },
+      { label: "Fry Style", value: "Slow Ghee" },
+    ],
+    color: "#FAF3E6",
+    ink: "#123D32",
+    accent: "#651B24",
+    image: "/sweets/badusha.jpg",
+  },
+  {
+    id: "carrot-burfi",
+    name: "Carrot Burfi",
+    edition: "Fresh Carrot Confectionery · Fresh Garden Delicacy",
+    category: "Fresh Carrot Confectionery",
+    headline:
+      "Vibrant orange traditional sweet prepared with freshly grated garden carrots, slow-condensed milk, 100% pure homemade ghee, cardamom, and toasted cashews.",
+    description:
+      "Slow-simmered farm carrots reduced in rich whole milk and pure homemade ghee for an authentically succulent texture.",
+    tags: [
+      "Fresh Carrots",
+      "Milk Solids",
+      "100% Pure Homemade Ghee",
+      "Cardamom",
+      "Cashews",
+    ],
+    metrics: [
+      { label: "Garden Fresh", value: "100%" },
+      { label: "Simmer Time", value: "4 Hours" },
+    ],
+    color: "#FFF0E6",
+    ink: "#123D32",
+    accent: "#E65C24",
+    image: "/sweets/carrot-burfi.jpg",
+  },
+  {
+    id: "pista-burfi",
+    name: "Pista Burfi",
+    edition: "Diamond Nut Confectionery · Royal Pistachio Delicacy",
+    category: "Diamond Nut Confectionery",
+    headline:
+      "Luxurious pastel-green diamond burfi crafted from premium ground pistachios, condensed whole milk, pure homemade ghee, and cardamom.",
+    description:
+      "Finely ground rich emerald pistachios combined with slow-condensed milk, cut into delicate royal diamond shapes.",
+    tags: [
+      "Pistachios",
+      "Milk Solids",
+      "100% Pure Homemade Ghee",
+      "Cardamom",
+      "Sugar",
+    ],
+    metrics: [
+      { label: "Pistachio Grade", value: "Premium" },
+      { label: "Texture", value: "Velvety" },
+    ],
+    color: "#EDF5EA",
+    ink: "#163828",
+    accent: "#4A7C59",
+    image: "/sweets/pista-burfi.jpg",
+  },
+  {
+    id: "rose-burfi",
+    name: "Rose Burfi",
+    edition: "Infused Milk Specialty · Floral Rose Fudge",
+    category: "Infused Milk Specialty",
+    headline:
+      "Fragrant pink confectionery infused with damask rose petals, rose water, slow-condensed milk solids, and 100% pure homemade ghee.",
+    description:
+      "Delicate and aromatic milk fudge delicately scented with natural rose water and studded with slivered nuts.",
+    tags: [
+      "Milk Solids",
+      "100% Pure Homemade Ghee",
+      "Rose Water",
+      "Cardamom",
+      "Sugar",
+    ],
+    metrics: [
+      { label: "Essence", value: "Damask Rose" },
+      { label: "Finish", value: "Aromatic" },
+    ],
+    color: "#FAF0F2",
+    ink: "#581827",
+    accent: "#C25975",
+    image: "/sweets/rose-burfi.jpg",
+  },
+  {
+    id: "gulab-jamun",
+    name: "Gulab Jamun",
+    edition: "Heritage Festive Confectionery · Classic Syrup-Soaked",
+    category: "Heritage Festive Confectionery",
+    headline:
+      "Deep golden spheres crafted from slow-reduced milk solids, gently fried in 100% pure homemade ghee and steeped in fragrant cardamom sugar syrup.",
+    description:
+      "Ultra-soft melt-in-mouth dumplings soaked in warm rose and cardamom-scented sugar syrup for a heavenly dessert.",
+    tags: [
+      "Milk Solids",
+      "Wheat Flour",
+      "100% Pure Homemade Ghee",
+      "Cardamom",
+      "Rose Water",
+    ],
+    metrics: [
+      { label: "Fried In", value: "100% Pure Ghee" },
+      { label: "Soak", value: "Cardamom Syrup" },
+    ],
+    color: "#FFF5EA",
+    ink: "#2B1610",
+    accent: "#C99732",
+    image: "/sweets/gulab-jamun.jpg",
+  },
+  {
+    id: "milk-laddu",
+    name: "Milk Laddu",
+    subtitle: "Also called Tirupathi Laddu",
+    edition: "Heritage Milk Laddu · Celebration Specialty",
+    category: "Heritage Milk Laddu",
+    headline:
+      "A traditional, round Indian sweet known for its rich taste, soft texture, and delightful sweetness. A lovely choice for celebrations, family gatherings, and special occasions.",
+    description:
+      "Rich, soft, and crumbly with slow-simmered milk sweetness, generous pure homemade ghee, whole cashews, plump raisins, and green cardamom.",
+    tags: [
+      "Milk Solids",
+      "Gram Flour",
+      "100% Pure Homemade Ghee",
+      "Cashews",
+      "Raisins",
+      "Green Cardamom",
+    ],
+    metrics: [
+      { label: "Occasion", value: "Celebrations" },
+      { label: "Texture", value: "Soft & Crumbly" },
+    ],
+    color: "#FBF7EF",
+    ink: "#123D32",
+    accent: "#651B24",
+    image: "/sweets/milk-laddu.jpg",
   },
 ];
 
 interface SignatureSweetsSectionProps {
-  onSelectSweet?: (sweet: SignatureSweet) => void;
+  onSelectSweet?: (sweetName: string) => void;
 }
 
 export function SignatureSweetsSection({
@@ -185,7 +421,7 @@ export function SignatureSweetsSection({
             if (art && idx > 0) {
               gsap.fromTo(
                 art,
-                { yPercent: 14, rotate: -3 },
+                { yPercent: 12, rotate: -2 },
                 {
                   yPercent: 0,
                   rotate: 0,
@@ -243,7 +479,8 @@ export function SignatureSweetsSection({
 
   return (
     <section
-      id="signature-collection"
+      id="sweets"
+      data-tone="light"
       ref={containerRef}
       className="relative bg-[#0c0d0c] text-white"
     >
@@ -259,20 +496,20 @@ export function SignatureSweetsSection({
           }}
         >
           <div className="veil-content flex min-h-[100svh] flex-col items-center justify-center px-6 text-center">
-            <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.25em] text-[#C99732]">
-              <Sparkles className="size-3.5" /> Our Signature Sweets Collection
+            <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#C99732]/40 bg-[#C99732]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.25em] text-[#C99732]">
+              <Sparkles className="size-3.5" /> Sri Amman Bakery · Established 2022
             </span>
             <h2 className="text-[clamp(3.5rem,13vw,13rem)] font-bold tracking-tight leading-[0.85] uppercase">
               Signature<br />Sweets
-              <span className="veil-dot ml-2 inline-block size-[0.16em] rounded-full align-baseline bg-[#EAD9B8] shadow-[0_0_24px_rgba(234,217,184,0.6)]" />
+              <span className="veil-dot ml-2 inline-block size-[0.16em] rounded-full align-baseline bg-[#C99732] shadow-[0_0_24px_rgba(201,151,50,0.6)]" />
             </h2>
             <p className="mt-8 max-w-md text-lg text-white/70">
-              An artisanal tasting collection, slow-crafted in limited daily batches.
+              Handcrafted daily with 100% pure homemade ghee. Twelve artisanal traditional specialties prepared fresh daily.
             </p>
           </div>
         </div>
 
-        {/* Sweets Chapters (Sticky Stacking Deck) */}
+        {/* 12 Traditional Sweets Chapters (Sticky Stacking Deck) */}
         {signatureSweets.map((sweet, idx) => (
           <div key={sweet.id} className="contents">
             <span className="sheet-marker block h-0" aria-hidden="true" />
@@ -290,15 +527,32 @@ export function SignatureSweetsSection({
               <div className="relative flex min-h-[100svh] flex-col justify-between px-6 pb-12 pt-24 md:flex-row md:items-center md:px-16 lg:px-24">
                 {/* Left Description Column (45% width) */}
                 <div className="relative z-10 flex flex-1 flex-col md:max-w-[46%]">
-                  <span className="text-xs font-semibold uppercase tracking-[0.2em] opacity-75">
-                    {sweet.edition}
-                  </span>
+                  <div className="flex items-center gap-3">
+                    <span
+                      className="text-xs font-bold uppercase tracking-[0.2em]"
+                      style={{ color: sweet.accent }}
+                    >
+                      {sweet.edition}
+                    </span>
+                    <span className="text-xs font-medium opacity-50">
+                      · {String(idx + 1).padStart(2, "0")} / 12
+                    </span>
+                  </div>
 
-                  <h3 className="sweet-title mt-3 text-[clamp(2.75rem,5.5vw,6.5rem)] font-extrabold leading-[0.9] tracking-tight">
+                  <h3 className="sweet-title mt-3 font-serif text-[clamp(2.75rem,5.5vw,6.5rem)] font-extrabold leading-[0.9] tracking-tight">
                     {sweet.name}
                   </h3>
 
-                  <p className="mt-5 text-[clamp(1.15rem,1.8vw,1.75rem)] font-medium leading-snug">
+                  {sweet.subtitle && (
+                    <p
+                      className="mt-1 text-sm font-semibold italic"
+                      style={{ color: sweet.accent }}
+                    >
+                      {sweet.subtitle}
+                    </p>
+                  )}
+
+                  <p className="mt-5 text-[clamp(1.1rem,1.7vw,1.65rem)] font-medium leading-snug">
                     {sweet.headline}
                   </p>
 
@@ -306,12 +560,12 @@ export function SignatureSweetsSection({
                     {sweet.description}
                   </p>
 
-                  {/* Flavor Note Tags */}
+                  {/* Ingredients & Flavor Tags */}
                   <ul className="mt-6 flex flex-wrap gap-2">
                     {sweet.tags.map((tag) => (
                       <li
                         key={tag}
-                        className="rounded-full border border-current/25 px-3.5 py-1 text-xs font-semibold tracking-wide"
+                        className="rounded-full border border-current/20 bg-current/5 px-3.5 py-1 text-xs font-semibold tracking-wide"
                       >
                         {tag}
                       </li>
@@ -335,31 +589,32 @@ export function SignatureSweetsSection({
                   {/* Action CTA Buttons */}
                   <div className="mt-10 flex flex-wrap items-center gap-4">
                     <button
-                      onClick={() => onSelectSweet?.(sweet)}
+                      onClick={() => onSelectSweet?.(sweet.name)}
                       className="group inline-flex h-12 items-center gap-2 rounded-full px-7 text-sm font-semibold shadow-lg transition-all duration-200 hover:scale-105 active:scale-95 cursor-pointer"
                       style={{ backgroundColor: sweet.ink, color: sweet.color }}
                     >
-                      <span>Add to Tasting Box</span>
-                      <Plus className="size-4 transition-transform group-hover:rotate-90" />
+                      <span>View Sweet Profile</span>
+                      <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
                     </button>
                     <button
-                      onClick={() => onSelectSweet?.(sweet)}
+                      onClick={() => onSelectSweet?.(sweet.name)}
                       className="inline-flex h-12 items-center gap-2 rounded-full border border-current px-6 text-sm font-semibold transition-all duration-200 hover:bg-current/10 active:scale-95 cursor-pointer"
                     >
                       <span>Tasting Notes</span>
-                      <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+                      <Sparkles className="size-4" />
                     </button>
                   </div>
                 </div>
 
                 {/* Right Hero Sweet Image (55% width) with 3D Parallax Tilt */}
                 <figure className="relative mt-8 flex flex-1 items-center justify-center md:mt-0">
-                  <div className="relative">
+                  <div className="relative group cursor-pointer" onClick={() => onSelectSweet?.(sweet.name)}>
                     <img
                       src={sweet.image}
                       alt={sweet.name}
-                      className="sweet-hero-img max-h-[65svh] w-auto max-w-full rounded-2xl object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.55)] transition-transform duration-500 will-change-transform"
+                      className="sweet-hero-img max-h-[62svh] w-auto max-w-full rounded-2xl object-cover drop-shadow-[0_40px_80px_rgba(0,0,0,0.55)] transition-transform duration-500 will-change-transform group-hover:scale-105"
                     />
+                    <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-black/10" />
                   </div>
                 </figure>
               </div>

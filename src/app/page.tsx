@@ -6,7 +6,6 @@ import { IntroFilm } from "@/components/IntroFilm";
 import { HeroSection } from "@/components/HeroSection";
 import { CraftRitualSection } from "@/components/CraftRitualSection";
 import { SignatureSweetsSection } from "@/components/SignatureSweetsSection";
-import { SweetsShowcase } from "@/components/SweetsShowcase";
 import { PackSection } from "@/components/PackSection";
 import { EstateSection } from "@/components/EstateSection";
 import { Footer } from "@/components/Footer";
@@ -90,13 +89,10 @@ export default function Home() {
         {/* Section 2: The Craft Ritual (Sweet Tray for Ghee, Roast, Craft, Garnish · 01 / 04) */}
         <CraftRitualSection onOpenOrder={handleOpenOrder} />
 
-        {/* Section 3: Luxury Signature Sweets Collection with Iris Aperture & Stacking Scroll */}
+        {/* Section 3: Our Signature 12 Sweets Collection with Iris Aperture & Stacking Scroll */}
         <SignatureSweetsSection
-          onSelectSweet={(sweet) => handleOpenOrder(sweet.name)}
+          onSelectSweet={(sweetName) => handleOpenOrder(sweetName)}
         />
-
-        {/* Section 4: Signature 12 Sweets Showcase (Consistent Balanced Responsive Grid) */}
-        <SweetsShowcase onOpenDetails={(prod) => handleOpenOrder(prod)} />
 
         {/* Section 4: The Box / Pack (Falling Garnishes Physics Animation) */}
         <PackSection onOpenOrder={handleOpenOrder} />
