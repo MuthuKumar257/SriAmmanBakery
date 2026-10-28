@@ -28,7 +28,7 @@ if indic_hits == 0:
     print('  [PASS] Zero Indic or Devanagari or Tamil characters found.')
 
 print('\n=== 3. AUDIT FOR ORDERING & PURCHASING PHRASES ===')
-order_terms = ['order now', 'add to cart', 'buy now', 'shopping cart', 'checkout', 'whatsapp', 'wa.me', 'order sweets']
+order_terms = ['order now', 'add to cart', 'buy now', 'shopping cart', 'checkout', 'order on whatsapp', 'order through whatsapp', 'wa.me', 'order sweets']
 order_hits = 0
 for f in files:
     with open(f, 'r', encoding='utf-8') as fp:

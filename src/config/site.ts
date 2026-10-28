@@ -165,7 +165,10 @@ export const siteConfig = {
   tagline: "Serving sweetness since 2022",
   establishedYear: "2022",
   taglineWording: "Serving sweetness since 2022",
-  phoneNumber: "+919876543210",
+  phoneNumber: "+91 96267 58666",
+  phoneRaw: "9626758666",
+  instagram: "https://www.instagram.com/sriamman_bakery/",
+  whatsappChannel: "https://whatsapp.com/channel/0029Vb97jtVBadmd0d98OQ0u",
   location: "South India · Fresh Sweets & Bakes",
 
   // Navigation Links
@@ -362,5 +365,9 @@ export const siteConfig = {
     description:
       "Handcrafted with 100% pure homemade ghee and baked fresh daily with care. Serving sweetness since 2022 with authentic traditional sweets and bakery favorites.",
     copyright: `© ${new Date().getFullYear()} Sri Amman Bakery. All rights reserved.`,
+    phone: "9626758666",
+    phoneDisplay: "+91 96267 58666",
+    instagram: "https://www.instagram.com/sriamman_bakery/",
+    whatsappChannel: "https://whatsapp.com/channel/0029Vb97jtVBadmd0d98OQ0u",
   },
 };

@@ -298,9 +298,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         {/* Desktop View (> 860px): 3-Column Symmetric Layout with Guaranteed Centerpiece Clearance */}
         <div className="hidden min-[861px]:grid min-[861px]:grid-cols-[1fr_auto_1fr] min-[861px]:items-center w-full px-(--pad)">
           {/* Left Column: "Sri Amman" right-aligned with guaranteed clearance */}
-          <div className="flex justify-end pr-[clamp(16px,2.2vw,36px)]">
+          <div className="flex justify-end pr-[clamp(14px,2vw,32px)]">
             <span
-              className={`${gradientTextClass} animate-rise font-serif text-[clamp(2.4rem,5.2vw,6.5rem)] leading-none font-medium tracking-[-.02em] whitespace-nowrap`}
+              className={`${gradientTextClass} animate-rise font-serif text-[clamp(3.2rem,6.8vw,8.4rem)] leading-none font-medium tracking-[-.02em] whitespace-nowrap`}
             >
               {siteConfig.hero.titleWord1}
             </span>
@@ -313,9 +313,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           />
 
           {/* Right Column: "Bakery" left-aligned with identical clearance */}
-          <div className="flex justify-start pl-[clamp(16px,2.2vw,36px)]">
+          <div className="flex justify-start pl-[clamp(14px,2vw,32px)]">
             <span
-              className={`${gradientTextClass} animate-rise-late font-serif text-[clamp(2.4rem,5.2vw,6.5rem)] leading-none font-normal italic tracking-[-.02em] whitespace-nowrap`}
+              className={`${gradientTextClass} animate-rise-late font-serif text-[clamp(3.2rem,6.8vw,8.4rem)] leading-none font-normal italic tracking-[-.02em] whitespace-nowrap`}
             >
               {siteConfig.hero.titleWord2}
             </span>
@@ -323,7 +323,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         </div>
 
         {/* Mobile View (<= 860px): Centered single title cleanly above the platter */}
-        <div className="flex min-[861px]:hidden justify-center items-center gap-[.25em] px-4 font-serif text-[clamp(1.8rem,7.8vw,3.2rem)] leading-none font-medium tracking-[-.02em] whitespace-nowrap">
+        <div className="flex min-[861px]:hidden justify-center items-center gap-[.28em] px-4 font-serif text-[clamp(2.4rem,9.5vw,4.5rem)] leading-none font-medium tracking-[-.02em] whitespace-nowrap">
           <span className={`${gradientTextClass} animate-rise`}>
             {siteConfig.hero.titleWord1}
           </span>

@@ -51,3 +51,4 @@ def verify_platter_and_garnishes():
 
 if __name__ == "__main__":
     verify_platter_and_garnishes()
+
