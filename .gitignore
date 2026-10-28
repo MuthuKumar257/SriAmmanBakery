@@ -5,8 +5,6 @@
 
 # Next.js build output
 /.next/
-/.open-next/
-open-next.config.ts
 /out/
 /build
 
