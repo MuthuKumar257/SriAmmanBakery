@@ -40,7 +40,7 @@ export default function RootLayout({
         <link rel="preload" as="image" href="/logo.png" />
         <link rel="preload" as="image" href="/sweet.png" />
         <link rel="preload" as="image" href="/sweet_tray.png" />
-        <link rel="preload" as="image" href="/estate_craft_poster.jpg" />
+        <link rel="preload" as="image" href="/stir_poster.jpg" />
       </head>
       <body className="bg-[#0A241E] text-[#F7F1E5] antialiased selection:bg-[#651B24] selection:text-[#F7F1E5]">
         {children}
